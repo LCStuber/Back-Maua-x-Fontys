@@ -11,7 +11,7 @@ class UniGuideApplicationTests {
 	static class TestConfig {
 		// Define beans or configuration settings here
 	}
-	
+
 	@Test
 	void contextLoads() {
 	}

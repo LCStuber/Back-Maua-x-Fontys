@@ -92,3 +92,10 @@ target/
 /.nb-gradle/
 !**/src/main/**/build/
 !**/src/test/**/build/
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local

@@ -20,9 +20,17 @@ jobs:
 
     steps:
     - name: Checkout Code
+      env: # Or as an environment variable
+        TENANT_ID: ${{ secrets.TENANT_ID }}
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
       uses: actions/checkout@v3
 
     - name: Set up JDK
+      env: # Or as an environment variable
+        TENANT_ID: ${{ secrets.TENANT_ID }}
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
       uses: actions/setup-java@v3
       with:
         java-version: '17'
@@ -30,9 +38,17 @@ jobs:
         cache: maven
 
     - name: Build and Test with Maven
+      env: # Or as an environment variable
+        TENANT_ID: ${{ secrets.TENANT_ID }}
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
       run: mvn clean install
 
     - name: Upload Test Results
+      env: # Or as an environment variable
+        TENANT_ID: ${{ secrets.TENANT_ID }}
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
       if: always()
       uses: actions/upload-artifact@v2
       with:

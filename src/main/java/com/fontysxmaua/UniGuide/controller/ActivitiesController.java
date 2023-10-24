@@ -3,11 +3,11 @@ package com.fontysxmaua.UniGuide.controller;
 import com.fontysxmaua.UniGuide.model.request.ActivityRequest;
 import com.fontysxmaua.UniGuide.model.response.ActivityResponse;
 import com.fontysxmaua.UniGuide.service.ActivitiesService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController

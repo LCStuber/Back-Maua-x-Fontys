@@ -1,16 +1,31 @@
 package com.fontysxmaua.UniGuide.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.fontysxmaua.UniGuide.model.request.ActivityRequest;
+import com.fontysxmaua.UniGuide.model.response.ActivityResponse;
+import com.fontysxmaua.UniGuide.service.ActivitiesService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/activities")
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/activities")
+@RequiredArgsConstructor
 public class ActivitiesController {
 
+    private final ActivitiesService service;
+
     @GetMapping
-    String getActivities(Model model){
-        return "activities";
+    public ResponseEntity<List<ActivityResponse>> getAllActivities() {
+        return ResponseEntity.ok(service.getAllActivities());
+    }
+
+    @PostMapping
+    public ResponseEntity<ActivityResponse> addProductInfo(
+            @RequestBody @Valid ActivityRequest productInfo
+    ) {
+        return ResponseEntity.ok(service.addProductInfo(productInfo));
     }
 }

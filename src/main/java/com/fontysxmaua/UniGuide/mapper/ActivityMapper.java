@@ -10,17 +10,25 @@ public class ActivityMapper {
     public ActivityResponse toResponse(Activity activity) {
         return new ActivityResponse(
                 activity.getId(),
+                activity.getIsMandatory(),
+                activity.getStartDate(),
+                activity.getEndDate(),
                 activity.getName(),
+                activity.getDescription(),
                 activity.getRoom(),
-                activity.getTime()
+                activity.getCapacity()
         );
     }
 
     public Activity toEntity(ActivityRequest request) {
         return Activity.builder()
+                .isMandatory(request.getIsMandatory())
+                .startDate(request.getStartDate())
+                .endDate(request.getEndDate())
                 .name(request.getName())
+                .description(request.getDescription())
                 .room(request.getRoom())
-                .time(request.getTime())
+                .capacity(request.getCapacity())
                 .build();
     }
 }

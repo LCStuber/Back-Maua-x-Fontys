@@ -25,7 +25,7 @@ public class ActivitiesService {
                 .toList();
     }
 
-    public ActivityResponse addProductInfo(ActivityRequest request) {
+    public ActivityResponse addActivity(ActivityRequest request) {
         final var activity = activityMapper.toEntity(request);
         final var savedActivity = activityRepository.save(activity);
 

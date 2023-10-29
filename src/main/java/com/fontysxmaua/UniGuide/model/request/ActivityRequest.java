@@ -16,13 +16,25 @@ import java.util.Date;
 @NoArgsConstructor
 public class ActivityRequest {
 
+    @NotNull(message = "You need to specify if the activity is mandatory or not")
+    private Boolean isMandatory;
+
+    @NotNull(message = "Start date is required")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private Date startDate;
+
+    @NotNull(message = "End date is required")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private Date endDate;
+
     @NotBlank(message = "Name is required")
     private String name;
+
+    @NotBlank(message = "Description is required")
+    private String description;
 
     @NotBlank(message = "Room is required")
     private String room;
 
-    @NotNull(message = "Date is required")
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Date time;
+    private Integer capacity;
 }

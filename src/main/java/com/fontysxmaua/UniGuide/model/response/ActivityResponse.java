@@ -9,7 +9,11 @@ import java.util.Date;
 @AllArgsConstructor
 public class ActivityResponse {
     private final String id;
+    private Boolean isMandatory;
+    private Date startDate;
+    private Date endDate;
     private final String name;
+    private String description;
     private final String room;
-    private final Date time;
+    private Integer capacity;
 }

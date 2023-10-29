@@ -30,6 +30,8 @@ public class AppConfiguration extends WebSecurityConfigurerAdapter {
 
         http.antMatcher("/**")
                 .authorizeRequests()
+                .antMatchers("/api/v1/**")  // TODO: Remove when authentication is added
+                    .permitAll()
                 .antMatchers("/", "/login**", "/error**")
                     .permitAll()
                 .anyRequest()
@@ -38,6 +40,8 @@ public class AppConfiguration extends WebSecurityConfigurerAdapter {
                     .logout()
                         .deleteCookies()
                         .invalidateHttpSession(true)
-                        .logoutSuccessUrl(logoutUrl);
+                        .logoutSuccessUrl(logoutUrl)
+                .and()
+                    .csrf().ignoringAntMatchers("/api/v1/**");   // TODO: Remove when authentication is added
     }
 }

@@ -23,9 +23,15 @@ public class ActivitiesController {
     }
 
     @PostMapping
-    public ResponseEntity<ActivityResponse> addProductInfo(
-            @RequestBody @Valid ActivityRequest productInfo
+    public ResponseEntity<ActivityResponse> addActivity(
+            @RequestBody @Valid ActivityRequest request
     ) {
-        return ResponseEntity.ok(service.addProductInfo(productInfo));
+        return ResponseEntity.ok(service.addActivity(request));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteActivity(@PathVariable String id) {
+        service.deleteActivity(id);
+        return ResponseEntity.ok().build();
     }
 }

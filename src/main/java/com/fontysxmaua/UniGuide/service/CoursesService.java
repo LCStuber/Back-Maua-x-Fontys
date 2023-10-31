@@ -43,7 +43,8 @@ public class CoursesService {
         oldCourse.setName(newCourse.getName());
         oldCourse.setDescription(newCourse.getDescription());
         oldCourse.setCoordinator(newCourse.getCoordinator());
-        
+        oldCourse.setCoordinator(newCourse.getUrl());
+
         final var savedCourse = courseRepository.save(oldCourse);
 
         return courseMapper.toResponse(savedCourse);

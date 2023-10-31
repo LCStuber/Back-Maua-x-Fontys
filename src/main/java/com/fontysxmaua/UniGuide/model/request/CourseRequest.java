@@ -20,4 +20,7 @@ public class CourseRequest {
 
     @NotBlank(message = "Coordinator's name is required")
     private String coordinator;
+
+    @NotBlank(message = "Image URL is required")
+    private String url;
 }

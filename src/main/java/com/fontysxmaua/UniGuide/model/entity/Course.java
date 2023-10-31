@@ -26,4 +26,7 @@ public class Course {
 
     @DynamoDBAttribute
     private String coordinator;
+
+    @DynamoDBAttribute
+    private String url;
 }

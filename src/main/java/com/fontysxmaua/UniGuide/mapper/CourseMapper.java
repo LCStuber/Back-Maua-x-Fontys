@@ -12,7 +12,8 @@ public class CourseMapper {
                 course.getId(),
                 course.getName(),
                 course.getDescription(),
-                course.getCoordinator()
+                course.getCoordinator(),
+                course.getUrl()
         );
     }
 
@@ -21,6 +22,7 @@ public class CourseMapper {
                 .name(request.getName())
                 .description(request.getDescription())
                 .coordinator(request.getCoordinator())
+                .url(request.getUrl())
                 .build();
     }
 }

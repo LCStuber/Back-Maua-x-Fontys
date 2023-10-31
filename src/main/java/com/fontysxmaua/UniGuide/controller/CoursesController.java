@@ -4,6 +4,8 @@ import com.fontysxmaua.UniGuide.model.request.CourseRequest;
 import com.fontysxmaua.UniGuide.model.response.CourseResponse;
 import com.fontysxmaua.UniGuide.service.CoursesService;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +27,7 @@ public class CoursesController {
     @PostMapping
     public ResponseEntity<CourseResponse> addCourse(
             @RequestBody @Valid CourseRequest request) {
-        return ResponseEntity.ok(service.addCourse(request));
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.addCourse(request));
     }
 
     @DeleteMapping("/{id}")

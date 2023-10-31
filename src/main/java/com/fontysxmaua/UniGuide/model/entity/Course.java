@@ -11,7 +11,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@DynamoDBTable(tableName = "Activity")
+@DynamoDBTable(tableName = "Course")
 public class Course {
 
     @DynamoDBHashKey

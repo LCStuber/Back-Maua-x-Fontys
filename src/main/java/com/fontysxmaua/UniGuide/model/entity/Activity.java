@@ -7,6 +7,8 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import lombok.*;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -40,6 +42,29 @@ public class Activity {
 
     @DynamoDBAttribute
     private Integer capacity;
+
+    @DynamoDBAttribute
+    private Set<String> subscribed;
+
+    @DynamoDBAttribute(attributeName = "attending")
+    private Set<String> attending;
+
+    public void addSubscribed(String email) {
+        if (this.subscribed == null) {
+            this.subscribed = new HashSet<>();
+        }
+
+        this.subscribed.add(email);
+    }
+
+
+    public void addAttending(String email) {
+        if (this.attending == null) {
+            this.attending = new HashSet<>();
+        }
+
+        this.attending.add(email);
+    }
 
 //    @DynamoDBAttribute
 //    private User creator;

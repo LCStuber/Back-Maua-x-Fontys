@@ -15,7 +15,6 @@ import java.util.List;
 public class ActivitiesService {
 
     private final ActivityRepository activityRepository;
-
     private final ActivityMapper activityMapper;
 
     public List<ActivityResponse> getAllActivities() {
@@ -25,8 +24,28 @@ public class ActivitiesService {
                 .toList();
     }
 
+    public ActivityResponse getActivityById(String id) {
+        return activityMapper.toResponse(activityRepository.findById(id).orElseThrow());
+    }
+
     public ActivityResponse addActivity(ActivityRequest request) {
         final var activity = activityMapper.toEntity(request);
+        final var savedActivity = activityRepository.save(activity);
+
+        return activityMapper.toResponse(savedActivity);
+    }
+
+    public ActivityResponse addPersonToActivity(String id, String personEmail) {
+        final var activity = activityRepository.findById(id).orElseThrow();
+        activity.addAttending(personEmail);
+        final var savedActivity = activityRepository.save(activity);
+
+        return activityMapper.toResponse(savedActivity);
+    }
+
+    public ActivityResponse subscribePersonToActivity(String id, String personEmail) {
+        final var activity = activityRepository.findById(id).orElseThrow();
+        activity.addSubscribed(personEmail);
         final var savedActivity = activityRepository.save(activity);
 
         return activityMapper.toResponse(savedActivity);

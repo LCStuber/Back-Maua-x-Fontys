@@ -16,7 +16,9 @@ public class ActivityMapper {
                 activity.getName(),
                 activity.getDescription(),
                 activity.getRoom(),
-                activity.getCapacity()
+                activity.getCapacity(),
+                activity.getSubscribed(),
+                activity.getAttending()
         );
     }
 

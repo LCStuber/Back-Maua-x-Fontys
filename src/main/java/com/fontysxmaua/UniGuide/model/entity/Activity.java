@@ -57,6 +57,12 @@ public class Activity {
         this.subscribed.add(email);
     }
 
+    public void removeSubscribed(String email){
+        if (this.subscribed != null){
+            this.subscribed.remove(email);
+        }
+    }
+
 
     public void addAttending(String email) {
         if (this.attending == null) {

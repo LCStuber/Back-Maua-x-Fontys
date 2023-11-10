@@ -51,6 +51,14 @@ public class ActivitiesService {
         return activityMapper.toResponse(savedActivity);
     }
 
+    public ActivityResponse unsubscribePersonFromActivity(String id, String personEmail){
+        final var activity = activityRepository.findById(id).orElseThrow();
+        activity.removeSubscribed(personEmail);
+        final var savedActivity = activityRepository.save(activity);
+
+        return activityMapper.toResponse(savedActivity);
+    }
+
     public void deleteActivity(String id) {
         activityRepository.deleteById(id);
     }

@@ -22,6 +22,21 @@ public class ActivitiesController {
         return ResponseEntity.ok(service.getAllActivities());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ActivityResponse> getActivityById(@PathVariable String id) {
+        return ResponseEntity.ok(service.getActivityById(id));
+    }
+
+    @PostMapping("/{id}/addAttending/{personEmail}")
+    public ResponseEntity<ActivityResponse> getAttendingById(@PathVariable String id, @PathVariable String personEmail) {
+        return ResponseEntity.ok(service.addPersonToActivity(id, personEmail));
+    }
+
+    @PostMapping("/{id}/addSubscribed/{personEmail}")
+    public ResponseEntity<ActivityResponse> getSubscribedById(@PathVariable String id, @PathVariable String personEmail) {
+        return ResponseEntity.ok(service.subscribePersonToActivity(id, personEmail));
+    }
+
     @PostMapping
     public ResponseEntity<ActivityResponse> addActivity(
             @RequestBody @Valid ActivityRequest request

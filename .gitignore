@@ -99,3 +99,6 @@ target/
 .env.test.local
 .env.production.local
 .env.local
+
+# docker
+/docker

@@ -28,13 +28,18 @@ public class ActivitiesController {
     }
 
     @PostMapping("/{id}/addAttending/{personEmail}")
-    public ResponseEntity<ActivityResponse> getAttendingById(@PathVariable String id, @PathVariable String personEmail) {
+    public ResponseEntity<ActivityResponse> addAttendingById(@PathVariable String id, @PathVariable String personEmail) {
         return ResponseEntity.ok(service.addPersonToActivity(id, personEmail));
     }
 
     @PostMapping("/{id}/addSubscribed/{personEmail}")
-    public ResponseEntity<ActivityResponse> getSubscribedById(@PathVariable String id, @PathVariable String personEmail) {
+    public ResponseEntity<ActivityResponse> addSubscribedById(@PathVariable String id, @PathVariable String personEmail) {
         return ResponseEntity.ok(service.subscribePersonToActivity(id, personEmail));
+    }
+
+    @PostMapping("/{id}/removeSubscribed/{personEmail}")
+    public ResponseEntity<ActivityResponse> removeSubscribedById(@PathVariable String id, @PathVariable String personEmail){
+        return ResponseEntity.ok(service.unsubscribePersonFromActivity(id, personEmail));
     }
 
     @PostMapping

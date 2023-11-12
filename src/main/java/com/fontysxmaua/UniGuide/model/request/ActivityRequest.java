@@ -37,4 +37,7 @@ public class ActivityRequest {
     private String room;
 
     private Integer capacity;
+
+    @NotBlank(message = "Lector is required")
+    private String lector;
 }

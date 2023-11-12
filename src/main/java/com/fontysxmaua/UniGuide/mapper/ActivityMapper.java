@@ -18,7 +18,8 @@ public class ActivityMapper {
                 activity.getRoom(),
                 activity.getCapacity(),
                 activity.getSubscribed(),
-                activity.getAttending()
+                activity.getAttending(),
+                activity.getLector()
         );
     }
 
@@ -31,6 +32,7 @@ public class ActivityMapper {
                 .description(request.getDescription())
                 .room(request.getRoom())
                 .capacity(request.getCapacity())
+                .lector(request.getLector())
                 .build();
     }
 }

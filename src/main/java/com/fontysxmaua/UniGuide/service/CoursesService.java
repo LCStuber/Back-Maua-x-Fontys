@@ -36,14 +36,14 @@ public class CoursesService {
         courseRepository.deleteById(id);
     }
 
-    public CourseResponse updatCourse(String id, CourseRequest request) {
+    public CourseResponse updateCourse(String id, CourseRequest request) {
         final var newCourse = courseMapper.toEntity(request);
         final var oldCourse = courseRepository.findById(id).get();
 
         oldCourse.setName(newCourse.getName());
         oldCourse.setDescription(newCourse.getDescription());
         oldCourse.setCoordinator(newCourse.getCoordinator());
-        oldCourse.setCoordinator(newCourse.getUrl());
+        oldCourse.setUrl(newCourse.getUrl());
 
         final var savedCourse = courseRepository.save(oldCourse);
 

@@ -63,6 +63,9 @@ public class Activity {
     public void removeSubscribed(String email){
         if (this.subscribed != null){
             this.subscribed.remove(email);
+            if (this.subscribed.isEmpty()){
+                this.subscribed = null;
+            }
         }
     }
 

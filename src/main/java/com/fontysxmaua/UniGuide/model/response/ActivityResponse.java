@@ -19,4 +19,5 @@ public class ActivityResponse {
     private final Integer capacity;
     private final Set<String> subscribed;
     private final Set<String> attending;
+    private final String lector;
 }

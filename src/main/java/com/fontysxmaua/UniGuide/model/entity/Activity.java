@@ -49,6 +49,9 @@ public class Activity {
     @DynamoDBAttribute(attributeName = "attending")
     private Set<String> attending;
 
+    @DynamoDBAttribute(attributeName = "lector")
+    private String lector;
+
     public void addSubscribed(String email) {
         if (this.subscribed == null) {
             this.subscribed = new HashSet<>();

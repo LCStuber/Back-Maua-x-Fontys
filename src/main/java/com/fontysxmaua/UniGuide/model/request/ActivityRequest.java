@@ -37,4 +37,6 @@ public class ActivityRequest {
     private String room;
 
     private Integer capacity;
+
+    private String lector;
 }

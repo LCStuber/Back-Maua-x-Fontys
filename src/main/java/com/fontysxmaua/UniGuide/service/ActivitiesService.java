@@ -8,6 +8,7 @@ import com.fontysxmaua.UniGuide.repository.ActivityRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -20,6 +21,7 @@ public class ActivitiesService {
     public List<ActivityResponse> getAllActivities() {
         return ((List<Activity>) activityRepository.findAll())
                 .stream()
+                .sorted(Comparator.comparing(Activity::getStartDate))
                 .map(activityMapper::toResponse)
                 .toList();
     }

@@ -10,4 +10,5 @@ public class OrganizationResponse {
     private final String name;
     private final String description;
     private final String url;
+    private final String instagram;
 }

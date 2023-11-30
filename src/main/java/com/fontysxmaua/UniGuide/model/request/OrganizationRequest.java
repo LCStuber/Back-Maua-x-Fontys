@@ -20,4 +20,7 @@ public class OrganizationRequest {
 
     @NotBlank(message = "Image URL is required")
     private String url;
+
+    @NotBlank(message = "Instagram is required")
+    private String instagram;
 }

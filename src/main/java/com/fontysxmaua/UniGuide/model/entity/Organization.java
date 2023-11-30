@@ -26,4 +26,7 @@ public class Organization {
 
     @DynamoDBAttribute
     private String url;
+
+    @DynamoDBAttribute
+    private String instagram;
 }

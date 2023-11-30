@@ -44,6 +44,7 @@ public class OrganizationsService {
         oldOrganization.setName(newOrganization.getName());
         oldOrganization.setDescription(newOrganization.getDescription());
         oldOrganization.setUrl(newOrganization.getUrl());
+        oldOrganization.setInstagram(newOrganization.getInstagram());
 
         final var savedOrganization = organizationRepository.save(oldOrganization);
 

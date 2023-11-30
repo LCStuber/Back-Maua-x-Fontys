@@ -15,12 +15,17 @@ public class CourseRequest {
     @NotBlank(message = "Name is required")
     private String name;
 
-    @NotBlank(message = "Description is required")
-    private String description;
-
     @NotBlank(message = "Coordinator's name is required")
     private String coordinator;
 
+    @NotBlank(message = "Coordinator's Image is required")
+    private String coordinatorLink;
+
+    @NotBlank(message = "Coordinator's Email is required")
+    private String coordinatorEmail;
+
     @NotBlank(message = "Image URL is required")
     private String url;
+
+    private String description;
 }

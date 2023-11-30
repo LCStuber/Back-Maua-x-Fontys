@@ -8,7 +8,9 @@ import lombok.Data;
 public class CourseResponse {
     private final String id;
     private final String name;
-    private final String description;
     private final String coordinator;
+    private final String coordinatorImage;
+    private final String coordinatorEmail;
     private final String url;
+    private final String description;
 }

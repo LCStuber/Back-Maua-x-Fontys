@@ -11,18 +11,22 @@ public class CourseMapper {
         return new CourseResponse(
                 course.getId(),
                 course.getName(),
-                course.getDescription(),
                 course.getCoordinator(),
-                course.getUrl()
+                course.getCoordinatorImage(),
+                course.getCoordinatorEmail(),
+                course.getUrl(),
+                course.getDescription()
         );
     }
 
     public Course toEntity(CourseRequest request) {
         return Course.builder()
                 .name(request.getName())
-                .description(request.getDescription())
                 .coordinator(request.getCoordinator())
+                .coordinatorImage(request.getCoordinatorLink())
+                .coordinatorEmail(request.getCoordinatorEmail())
                 .url(request.getUrl())
+                .description(request.getDescription())
                 .build();
     }
 }

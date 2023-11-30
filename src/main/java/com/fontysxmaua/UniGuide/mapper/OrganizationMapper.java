@@ -12,7 +12,8 @@ public class OrganizationMapper {
                 organization.getId(),
                 organization.getName(),
                 organization.getDescription(),
-                organization.getUrl()
+                organization.getUrl(),
+                organization.getInstagram()
         );
     }
 
@@ -21,6 +22,7 @@ public class OrganizationMapper {
                 .name(request.getName())
                 .description(request.getDescription())
                 .url(request.getUrl())
+                .instagram(request.getInstagram())
                 .build();
     }
 }

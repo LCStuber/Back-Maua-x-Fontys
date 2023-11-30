@@ -22,10 +22,16 @@ public class Course {
     private String name;
 
     @DynamoDBAttribute
-    private String description;
+    private String coordinator;
 
     @DynamoDBAttribute
-    private String coordinator;
+    private String coordinatorImage;
+
+    @DynamoDBAttribute
+    private String coordinatorEmail;
+
+    @DynamoDBAttribute
+    private String description;
 
     @DynamoDBAttribute
     private String url;

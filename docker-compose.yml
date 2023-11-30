@@ -12,4 +12,4 @@ services:
       REGION: 'eu-west-1'
     volumes:
       - "./docker/dynamodb:/home/dynamodblocal/data"
-    working_dir: /home/dynamodblocal
+    working_dir: /home/dynamodblocal  

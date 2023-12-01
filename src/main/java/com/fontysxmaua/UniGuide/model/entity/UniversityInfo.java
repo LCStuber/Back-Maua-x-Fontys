@@ -23,4 +23,10 @@ public class UniversityInfo {
 
     @DynamoDBAttribute
     private String viceRector;
+
+    @DynamoDBAttribute
+    private String rectorImage;
+
+    @DynamoDBAttribute
+    private String viceRectorImage;
 }

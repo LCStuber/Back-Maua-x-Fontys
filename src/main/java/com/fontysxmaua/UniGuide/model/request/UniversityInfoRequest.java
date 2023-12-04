@@ -12,12 +12,16 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UniversityInfoRequest {
-    @NotBlank(message = "Name is required")
-    private String name;
 
     @NotBlank(message = "Rector's name is required")
     private String rector;
 
     @NotBlank(message = "Vice Rector's name is required")
     private String viceRector;
+
+    @NotBlank(message = "Rector's image URL is required")
+    private String rectorImage;
+
+    @NotBlank(message = "Vice Rector's image URL is required")
+    private String viceRectorImage;
 }

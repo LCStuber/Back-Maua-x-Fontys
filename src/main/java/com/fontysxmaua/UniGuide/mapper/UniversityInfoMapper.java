@@ -12,7 +12,9 @@ public class UniversityInfoMapper {
         return new UniversityInfoResponse(
                 universityInfo.getId(),
                 universityInfo.getRector(),
-                universityInfo.getViceRector()
+                universityInfo.getViceRector(),
+                universityInfo.getRectorImage(),
+                universityInfo.getViceRectorImage()
         );
     }
 
@@ -20,6 +22,8 @@ public class UniversityInfoMapper {
         return UniversityInfo.builder()
                 .rector(request.getRector())
                 .viceRector(request.getViceRector())
+                .rectorImage(request.getRectorImage())
+                .viceRectorImage(request.getViceRectorImage())
                 .build();
     }
 }

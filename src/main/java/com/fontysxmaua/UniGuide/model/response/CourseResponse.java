@@ -13,4 +13,5 @@ public class CourseResponse {
     private final String coordinatorEmail;
     private final String url;
     private final String description;
+    private final String displayImage;
 }

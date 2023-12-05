@@ -35,4 +35,7 @@ public class Course {
 
     @DynamoDBAttribute
     private String url;
+
+    @DynamoDBAttribute
+    private String displayImage;
 }

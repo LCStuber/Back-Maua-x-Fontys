@@ -41,9 +41,12 @@ public class CoursesService {
         final var oldCourse = courseRepository.findById(id).get();
 
         oldCourse.setName(newCourse.getName());
-        oldCourse.setDescription(newCourse.getDescription());
         oldCourse.setCoordinator(newCourse.getCoordinator());
+        oldCourse.setCoordinatorImage(newCourse.getCoordinatorImage());
+        oldCourse.setCoordinatorEmail(newCourse.getCoordinatorEmail());
         oldCourse.setUrl(newCourse.getUrl());
+        oldCourse.setDescription(newCourse.getDescription());
+        oldCourse.setDisplayImage(newCourse.getDisplayImage());
 
         final var savedCourse = courseRepository.save(oldCourse);
 

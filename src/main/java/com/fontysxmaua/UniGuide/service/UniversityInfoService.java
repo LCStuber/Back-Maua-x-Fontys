@@ -32,6 +32,8 @@ public class UniversityInfoService {
 
         oldUniversityInfo.setRector(newUniversityInfo.getRector());
         oldUniversityInfo.setViceRector(newUniversityInfo.getViceRector());
+        oldUniversityInfo.setRectorImage(newUniversityInfo.getRectorImage());
+        oldUniversityInfo.setViceRectorImage(newUniversityInfo.getViceRectorImage());
 
         final var savedUniversityInfo = universityInfoRepository.save(oldUniversityInfo);
 

@@ -46,6 +46,7 @@ public class CoursesService {
         oldCourse.setCoordinatorEmail(newCourse.getCoordinatorEmail());
         oldCourse.setUrl(newCourse.getUrl());
         oldCourse.setDescription(newCourse.getDescription());
+        oldCourse.setDisplayImage(newCourse.getDisplayImage());
 
         final var savedCourse = courseRepository.save(oldCourse);
 

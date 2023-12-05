@@ -28,4 +28,7 @@ public class CourseRequest {
     private String url;
 
     private String description;
+
+    @NotBlank(message = "Display Image is required")
+    private String displayImage;
 }

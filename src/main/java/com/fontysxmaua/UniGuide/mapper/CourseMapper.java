@@ -15,7 +15,8 @@ public class CourseMapper {
                 course.getCoordinatorImage(),
                 course.getCoordinatorEmail(),
                 course.getUrl(),
-                course.getDescription()
+                course.getDescription(),
+                course.getDisplayImage()
         );
     }
 
@@ -27,6 +28,7 @@ public class CourseMapper {
                 .coordinatorEmail(request.getCoordinatorEmail())
                 .url(request.getUrl())
                 .description(request.getDescription())
+                .displayImage(request.getDisplayImage())
                 .build();
     }
 }

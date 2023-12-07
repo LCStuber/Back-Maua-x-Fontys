@@ -26,6 +26,17 @@ public class ActivitiesService {
                 .toList();
     }
 
+    public List<ActivityResponse> getAllActivitiesByEmail(String email){
+        List<ActivityResponse> activities = getAllActivities();
+        for (ActivityResponse currActivity : activities){
+            if (currActivity.getSubscribed().contains(email)){
+                continue;
+            }
+            activities.remove(currActivity);
+        }
+        return activities;
+    }
+
     public ActivityResponse getActivityById(String id) {
         return activityMapper.toResponse(activityRepository.findById(id).orElseThrow());
     }

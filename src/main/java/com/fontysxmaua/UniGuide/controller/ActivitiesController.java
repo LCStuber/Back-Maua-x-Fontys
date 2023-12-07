@@ -27,6 +27,11 @@ public class ActivitiesController {
         return ResponseEntity.ok(service.getActivityById(id));
     }
 
+    @GetMapping("/{email}")
+    public ResponseEntity<List<ActivityResponse>> getAllActivitiesByEmail(@PathVariable String email){
+        return ResponseEntity.ok(service.getAllActivitiesByEmail(email));
+    }
+
     @PostMapping("/{id}/addAttending/{personEmail}")
     public ResponseEntity<ActivityResponse> addAttendingById(@PathVariable String id, @PathVariable String personEmail) {
         return ResponseEntity.ok(service.addPersonToActivity(id, personEmail));

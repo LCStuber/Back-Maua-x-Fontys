@@ -16,6 +16,7 @@ public class ActivityResponse {
     private final String name;
     private final String description;
     private final String room;
+    private final String building;
     private final Integer capacity;
     private final Set<String> subscribed;
     private final Set<String> attending;

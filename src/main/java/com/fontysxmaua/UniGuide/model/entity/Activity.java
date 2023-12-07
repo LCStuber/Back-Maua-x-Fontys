@@ -41,6 +41,9 @@ public class Activity {
     private String room;
 
     @DynamoDBAttribute
+    private String building;
+
+    @DynamoDBAttribute
     private Integer capacity;
 
     @DynamoDBAttribute

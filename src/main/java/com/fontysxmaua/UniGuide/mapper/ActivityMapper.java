@@ -16,6 +16,7 @@ public class ActivityMapper {
                 activity.getName(),
                 activity.getDescription(),
                 activity.getRoom(),
+                activity.getBuilding(),
                 activity.getCapacity(),
                 activity.getSubscribed(),
                 activity.getAttending(),
@@ -31,6 +32,7 @@ public class ActivityMapper {
                 .name(request.getName())
                 .description(request.getDescription())
                 .room(request.getRoom())
+                .building(request.getBuilding())
                 .capacity(request.getCapacity())
                 .lector(request.getLector())
                 .build();

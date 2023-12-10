@@ -59,8 +59,9 @@ public class Activity {
         if (this.subscribed == null) {
             this.subscribed = new HashSet<>();
         }
-
-        this.subscribed.add(email);
+        if (this.subscribed.size() < this.capacity){
+            this.subscribed.add(email);
+        }
     }
 
     public void removeSubscribed(String email){

@@ -36,6 +36,9 @@ public class ActivityRequest {
     @NotBlank(message = "Room is required")
     private String room;
 
+    @NotBlank(message = "Building is required")
+    private String building;
+
     private Integer capacity;
 
 

@@ -41,7 +41,5 @@ public class ActivityRequest {
 
     private Integer capacity;
 
-
-     @NotBlank(message = "Lector is required")
     private String lector;
 }

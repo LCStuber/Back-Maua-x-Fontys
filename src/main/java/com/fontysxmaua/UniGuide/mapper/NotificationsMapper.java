@@ -12,7 +12,8 @@ public class NotificationsMapper {
                 notification.getId(),
                 notification.getSender(),
                 notification.getSubject(),
-                notification.getMessage()
+                notification.getMessage(),
+                notification.getDateCreated()
         );
     }
 
@@ -21,6 +22,7 @@ public class NotificationsMapper {
                 .sender(request.getSender())
                 .subject(request.getSubject())
                 .message(request.getMessage())
+                .dateCreated(request.getDateCreated())
                 .build();
     }
 }

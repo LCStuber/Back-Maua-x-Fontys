@@ -6,6 +6,8 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @Builder
@@ -25,4 +27,7 @@ public class Notification {
 
     @DynamoDBAttribute
     private String message;
+
+    @DynamoDBAttribute
+    private LocalDate dateCreated;
 }

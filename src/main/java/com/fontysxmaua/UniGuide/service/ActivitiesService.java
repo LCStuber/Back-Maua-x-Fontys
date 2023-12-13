@@ -29,17 +29,12 @@ public class ActivitiesService {
 
 public List<ActivityResponse> getAllActivitiesByEmail(String email) {
     List<ActivityResponse> activities = getAllActivities();
-
-    // Filter activities based on the condition
     List<ActivityResponse> filteredActivities = activities.stream()
             .filter(activity -> {
                 Set<String> subscribed = activity.getSubscribed();
                 return subscribed != null && subscribed.contains(email);
             })
             .toList();
-
-    System.out.println("batata2");
-    System.out.println(filteredActivities);
     return filteredActivities;
 }
 

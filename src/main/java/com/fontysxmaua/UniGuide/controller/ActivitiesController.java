@@ -27,7 +27,7 @@ public class ActivitiesController {
         return ResponseEntity.ok(service.getActivityById(id));
     }
 
-    @GetMapping("/{email}")
+    @GetMapping("/email/{email}")
     public ResponseEntity<List<ActivityResponse>> getAllActivitiesByEmail(@PathVariable String email){
         return ResponseEntity.ok(service.getAllActivitiesByEmail(email));
     }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -26,16 +27,21 @@ public class ActivitiesService {
                 .toList();
     }
 
-    public List<ActivityResponse> getAllActivitiesByEmail(String email){
-        List<ActivityResponse> activities = getAllActivities();
-        for (ActivityResponse currActivity : activities){
-            if (currActivity.getSubscribed().contains(email)){
-                continue;
-            }
-            activities.remove(currActivity);
-        }
-        return activities;
-    }
+public List<ActivityResponse> getAllActivitiesByEmail(String email) {
+    List<ActivityResponse> activities = getAllActivities();
+
+    // Filter activities based on the condition
+    List<ActivityResponse> filteredActivities = activities.stream()
+            .filter(activity -> {
+                Set<String> subscribed = activity.getSubscribed();
+                return subscribed != null && subscribed.contains(email);
+            })
+            .toList();
+
+    System.out.println("batata2");
+    System.out.println(filteredActivities);
+    return filteredActivities;
+}
 
     public ActivityResponse getActivityById(String id) {
         return activityMapper.toResponse(activityRepository.findById(id).orElseThrow());

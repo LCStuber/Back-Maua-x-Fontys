@@ -30,4 +30,7 @@ public class Notification {
 
     @DynamoDBAttribute
     private LocalDate dateCreated;
+
+    @DynamoDBAttribute
+    private String deviceToken;
 }

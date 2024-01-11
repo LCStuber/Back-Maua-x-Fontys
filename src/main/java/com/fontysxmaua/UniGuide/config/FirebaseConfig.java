@@ -3,8 +3,10 @@ package com.fontysxmaua.UniGuide.config;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
+import com.google.firebase.messaging.FirebaseMessaging;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,11 +14,14 @@ import java.io.IOException;
 @Configuration
 public class FirebaseConfig {
     @Bean
-    public FirebaseApp firebaseApp() throws IOException {
-        FileInputStream serviceAccount = new FileInputStream("src/main/resources/firebase-service-account.json");
-        FirebaseOptions options = FirebaseOptions.builder()
-                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+    FirebaseMessaging firebaseMessaging() throws IOException {
+        GoogleCredentials googleCredentials = GoogleCredentials
+                .fromStream(new ClassPathResource("firebase-service-account.json").getInputStream());
+        FirebaseOptions firebaseOptions = FirebaseOptions
+                .builder()
+                .setCredentials(googleCredentials)
                 .build();
-        return FirebaseApp.initializeApp(options);
+        FirebaseApp app = FirebaseApp.initializeApp(firebaseOptions, "firebase-app");
+        return FirebaseMessaging.getInstance(app);
     }
 }

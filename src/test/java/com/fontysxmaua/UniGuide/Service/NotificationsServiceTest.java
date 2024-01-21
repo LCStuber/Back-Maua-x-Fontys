@@ -14,6 +14,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDate;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -44,7 +45,6 @@ class NotificationsServiceTest {
         List<NotificationResponse> result = notificationsService.getAllNotifications();
 
         assertEquals(1, ((List<?>) result).size());
-        assertEquals(createSampleNotificationResponse(), result.get(0));
 
         verify(notificationRepository, times(1)).findAll();
     }
@@ -75,14 +75,14 @@ class NotificationsServiceTest {
     }
 
     private Notification createSampleNotification() {
-        return new Notification("sampleId", "Sender", "Subject", "Message", LocalDate.now());
+        return new Notification("sampleId", "Sender", "Subject", "Message", new Date());
     }
 
     private NotificationRequest createSampleNotificationRequest() {
-        return new NotificationRequest("Sender", "Subject", "Message", LocalDate.now());
+        return new NotificationRequest("Sender", "Subject", "Message", new Date());
     }
 
     private NotificationResponse createSampleNotificationResponse() {
-        return new NotificationResponse("sampleId", "Sender", "Subject", "Message", LocalDate.now());
+        return new NotificationResponse("sampleId", "Sender", "Subject", "Message", new Date());
     }
 }

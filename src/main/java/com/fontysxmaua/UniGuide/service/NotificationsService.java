@@ -26,6 +26,10 @@ public class NotificationsService {
                 .toList();
     }
 
+    public NotificationResponse getNotificationById(String id) {
+        return notificationsMapper.toResponse(notificationRepository.findById(id).orElseThrow());
+    }
+
     public NotificationResponse addNotification(NotificationRequest request) {
         final var notification = notificationsMapper.toEntity(request);
         final var savedNotification = notificationRepository.save(notification);

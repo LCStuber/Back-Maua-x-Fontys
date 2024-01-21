@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -12,5 +13,5 @@ public class NotificationResponse {
     private final String sender;
     private final String subject;
     private final String message;
-    private final LocalDate dateCreated;
+    private final Date dateCreated;
 }

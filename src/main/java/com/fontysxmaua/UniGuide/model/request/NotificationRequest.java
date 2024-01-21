@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @Builder
@@ -26,5 +27,5 @@ public class NotificationRequest {
 
     @NotNull(message = "Date is required")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private LocalDate dateCreated;
+    private Date dateCreated;
 }

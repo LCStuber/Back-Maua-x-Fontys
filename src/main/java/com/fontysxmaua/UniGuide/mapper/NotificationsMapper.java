@@ -13,8 +13,7 @@ public class NotificationsMapper {
                 notification.getSender(),
                 notification.getSubject(),
                 notification.getMessage(),
-                notification.getDateCreated(),
-                notification.getDeviceToken()
+                notification.getDateCreated()
         );
     }
 
@@ -24,7 +23,6 @@ public class NotificationsMapper {
                 .subject(request.getSubject())
                 .message(request.getMessage())
                 .dateCreated(request.getDateCreated())
-                .deviceToken(request.getDeviceToken())
                 .build();
     }
 }

@@ -32,13 +32,15 @@ public class NotficationsController {
     @PostMapping("/addNotification")
     public ResponseEntity<NotificationResponse> addNotification(
             @RequestBody @Valid NotificationRequest request){
-        return ResponseEntity.ok(service.addNotification(request));
+        System.out.println("Received notification request: " + request.toString());
+        return ResponseEntity.ok(service.addNotification(request));  //remove token
     }
 
     @PostMapping("/sendNotification")
     public String sendNotification(
-            @RequestBody @Valid NotificationRequest request) throws FirebaseMessagingException {
-        return firebaseMessagingService.sendNotification(request);
+            @RequestBody @Valid NotificationRequest request,
+            @RequestParam("token") String token) throws FirebaseMessagingException {
+        return firebaseMessagingService.sendNotification(request, token);  //request token separate from notification
     }
 
     @DeleteMapping("/{id}")

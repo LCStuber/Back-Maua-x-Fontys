@@ -13,5 +13,4 @@ public class NotificationResponse {
     private final String subject;
     private final String message;
     private final LocalDate dateCreated;
-    private final String deviceToken;
 }

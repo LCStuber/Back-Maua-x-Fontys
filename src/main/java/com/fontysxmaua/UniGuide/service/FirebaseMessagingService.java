@@ -15,7 +15,7 @@ public class FirebaseMessagingService {
         this.firebaseMessaging = firebaseMessaging;
     }
 
-    public String sendNotification(NotificationRequest request) throws FirebaseMessagingException {
+    public String sendNotification(NotificationRequest request, String token) throws FirebaseMessagingException {
         Notification notification = Notification
                 .builder()
                 .setTitle(request.getSender())
@@ -24,7 +24,7 @@ public class FirebaseMessagingService {
 
         Message message = Message
                 .builder()
-                .setToken(request.getDeviceToken())
+                .setToken(token)
                 .setNotification(notification)
                 .build();
 

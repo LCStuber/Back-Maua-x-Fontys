@@ -27,7 +27,4 @@ public class NotificationRequest {
     @NotNull(message = "Date is required")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateCreated;
-
-    @NotBlank(message = "Device token is required")
-    private String deviceToken;
 }
